@@ -17,7 +17,15 @@
     rel="stylesheet">
 
 <!-- Custom styles for this template-->
+
 <link href="admin_css/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 <!-- Bootstrap core JavaScript-->
 <script src="admin_css/vendor/jquery/jquery.min.js"></script>
 <script src="admin_css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -34,6 +42,101 @@
 <!-- Page level custom scripts -->
 <script src="admin_css/js/demo/chart-area-demo.js"></script>
 <script src="admin_css/js/demo/chart-pie-demo.js"></script>
+<style>
+    .search{
+  top:6px;
+  left:10px;
+}
+
+.form-control{
+
+    border:none;
+    padding-left:32px;
+}
+
+.form-control:focus{
+    
+    border:none;
+    box-shadow:none;
+}
+
+.green{
+    
+    color:green;
+}
+.popup-form-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+    .popup-form {
+        background-color: #fefefe;
+        
+        margin: 10% auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        height: 550px;
+       overflow:scroll;
+       
+    }
+    .close-btn {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close-btn:hover,
+    .close-btn:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-group input[type="text"],
+    .form-group select {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .form-group select {
+        appearance: auto;
+        -webkit-appearance: menulist;
+        -moz-appearance: menulist;
+    }
+    .submit-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .submit-btn:hover {
+        background-color: #45a049;
+    }
+    .addform{
+        border:none;
+    }
+    </style>
 </head>
     <body id="wrapper">
          <!-- Page Wrapper -->
@@ -58,6 +161,32 @@
             <!-- Page Content -->
            
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        @if(Session::has('success'))
+            <script>
+
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `{{ Session::get('success') }}`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+            </script>
+        @endif
+
+        @if(Session::has('error'))
+            <script>
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: `{{ Session::get('error') }}`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            </script>
+        @endif
     </body>
 </html>
 

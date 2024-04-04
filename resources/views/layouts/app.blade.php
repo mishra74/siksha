@@ -25,7 +25,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css" />
 <!-- Bootstrap core JavaScript-->
 <script src="admin_css/vendor/jquery/jquery.min.js"></script>
 <script src="admin_css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -60,10 +63,7 @@
     box-shadow:none;
 }
 
-.green{
-    
-    color:green;
-}
+
 .popup-form-container {
         display: none;
         position: fixed;
@@ -108,24 +108,12 @@
         margin-bottom: 5px;
     }
     .form-group input[type="text"],
-    .form-group select {
-        width: 100%;
-        padding: 8px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-    .form-group select {
-        appearance: auto;
-        -webkit-appearance: menulist;
-        -moz-appearance: menulist;
-    }
+    
     .submit-btn {
-        background-color: #4CAF50;
+        background-color:#cacaca
         color: white;
         padding: 12px 20px;
-        border: none;
+       
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
@@ -136,7 +124,71 @@
     .addform{
         border:none;
     }
+    
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
     </style>
+
 </head>
     <body id="wrapper">
          <!-- Page Wrapper -->

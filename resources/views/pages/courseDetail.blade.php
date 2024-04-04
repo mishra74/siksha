@@ -1,39 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.user')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sikshanation - Find Top Colleges, Universities in India | Explore Courses, Exams, Admissions, Latest News
-    </title>
-    <meta name="description"
-        content="Sikshanation - Find Top Colleges, Universities in India, Explore Courses, Exams, Admissions, Latest News">
-    <meta name="keywords"
-        content="Sikshanation - Find Top Colleges, Universities in India, Explore Courses, Exams, Admissions, Latest News">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
-    <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="assets/css/fontawesome-6.css">
-    <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <!-- magnific popup css -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- jquery ui css -->
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <!-- metismenu scss -->
-    <link rel="stylesheet" href="assets/css/metismenu.css">
-    <!-- custom style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+@section('title', 'Home')
 
-</head>
-
-<body>
-
-    <!-- header style one -->
-    <?php include('header.php') ?>
-    <!-- header style end -->
-    <!-- course details breadcrumb -->
+@section('content')
     <div class="course-details-breadcrumb-1 bg_image pt-5 mt-5 pb-5">
         <div class="container">
             <div class="row">
@@ -45,7 +14,7 @@
                             <a class="active" href="#">Course Details</a>
                         </div>
                         <h1 class="title">
-                            BTech (Bachelor of Technology)
+                            {{$data->course_name}} ({{$data->fullNameCourse}})
                         </h1>
                         <div class="rating-area">
                             <div class="stars-area">
@@ -112,7 +81,7 @@
                     <div class="tab-content mt--50" id="myTabContent">
                         <div class="tab-pane fade  show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="course-content-wrapper">
-                                <h5 class="title">BTech Course Overview</h5>
+                                <h5 class="title">{{$data->course_name}} Course Overview</h5>
                                 <p class="disc">
                                     B Tech or Bachelor of Technology is a four-year undergraduate Course that covers all
                                     the domains of Engineering and Technology. The B.Tech course list is available for
@@ -1041,7 +1010,7 @@
                                         <span>Admission Process</span>
                                     </div>
                                     <div class="right">
-                                        <span>Merit-Based, Entrance Exam</span>
+                                        <span>{{$data->Admission_Process}}</span>
                                     </div>
                                 </div>
                                 <div class="single-include">
@@ -1050,7 +1019,7 @@
                                         <span>Duration</span>
                                     </div>
                                     <div class="right">
-                                        <span>4 years</span>
+                                        <span> {{$data->Duration}}</span>
                                     </div>
                                 </div>
                                 <div class="single-include">
@@ -1059,7 +1028,7 @@
                                         <span>Exam Type</span>
                                     </div>
                                     <div class="right">
-                                        <span>Per Semester</span>
+                                        <span>{{$data->Exam_Type}}</span>
                                     </div>
                                 </div>
                                 <div class="single-include">
@@ -1068,7 +1037,7 @@
                                         <span>Course Fee</span>
                                     </div>
                                     <div class="right">
-                                        <span>INR 5,00,000 to INR 12,00,000</span>
+                                        <span>{{$data->Course_Fee}}</span>
                                     </div>
                                 </div>
                                 <div class="single-include">
@@ -1077,7 +1046,7 @@
                                         <span>Jobs</span>
                                     </div>
                                     <div class="right">
-                                        <span>Civil Engineer, Mechanical Engineer.....</span>
+                                        <span>{{$data->Jobs}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -1364,7 +1333,7 @@
     <!-- course area end -->
 
     <!-- footer call to action area start -->
-    <?php include('footer.php') ?>
+  
 
     <!-- all scripts -->
     <!-- jquery min js -->
@@ -1412,6 +1381,4 @@
             });
         });
     </script>
-</body>
-
-</html>
+    @endsection

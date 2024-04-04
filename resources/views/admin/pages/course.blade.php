@@ -9,7 +9,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">College</h1>
+    <h1 class="h3 mb-0 text-gray-800">Course</h1>
     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 </div>
@@ -39,7 +39,7 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">  <button onclick="openForm()" class="addform">+ Add College</button></h6>
+                <h6 class="m-0 font-weight-bold text-primary">  <button onclick="openForm()" class="addform">+ Add Course</button></h6>
                 <div class="dropdown no-arrow">
                     <div class="px-2">
                         <div class="mb-2 d-flex justify-content-between align-items-center">
@@ -260,10 +260,21 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="list_of_courses">List of Courses:</label>
-                        <textarea id="list_of_courses" name="list_of_course" required></textarea>
+                    <div class="row">
+                        <div class="col-md-8">
+                        <div class="form-group" id="list_of_courseContainer">
+                          <label for="list_of_course">List Of Course::</label>
+                          <input type="text" id="list_of_course" name="list_of_course[]" required>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                
+                        <button class="btn btn-md btn-primary" id="list_of_courseBTN" type="button">Add Row</button>
+                            </div>
+                        </div>
                     </div>
+                   
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -383,7 +394,21 @@ $('#jobBtn').click(function () {
     $('#jobContainer').append(dynamicCourseHTML);
     count++;
 });
-
+// list of course
+$('#list_of_courseBTN').click(function () {
+    let dynamicCourseHTML = `
+    <div class="form-group job-group">
+        <label for="Jobs">List Of Course:</label>
+        <div class="input-group">
+            <input type="text" class="form-control course-input" name="list_of_course[]" required>
+            <span class="input-group-btn">
+                <button class="btn btn-danger remove-listofcourse" type="button">Remove</button>
+            </span>
+        </div>
+    </div>`;
+    $('#list_of_courseContainer').append(dynamicCourseHTML);
+    count++;
+});
 // Removing course input field on click to Remove button
 $('#coursesContainer').on('click', '.remove-course', function () {
     $(this).closest('.course-group').remove();
@@ -391,9 +416,15 @@ $('#coursesContainer').on('click', '.remove-course', function () {
 $('#jobContainer').on('click', '.remove-course', function () {
     $(this).closest('.job-group').remove();
 });
+//list of course
+$('#list_of_courseContainer').on('click', '.remove-listofcourse', function () {
+    $(this).closest('.job-group').remove();
+});
     });
     
 
+
+    
     
 </script>
 

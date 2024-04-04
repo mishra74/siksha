@@ -38,6 +38,7 @@
                
                 <a class="collapse-item" href="{{route('college')}}">Colleges</a>
                 <a class="collapse-item" href="{{route('course')}}">Courses</a>
+               
             </div>
         </div>
     </li>
@@ -47,16 +48,17 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
+            <span>Other</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
+                <h6 class="collapse-header">Other:</h6>
+                <a class="collapse-item" href="{{url('/course-overview')}}">Course Overview</a>
+                <a class="collapse-item" href="{{url('college-overview')}}">College Overiew </a>
+                <a class="collapse-item" href="{{route('course')}}">Users</a>
+                <a class="collapse-item" href="{{route('course')}}">Students</a>
+               
             </div>
         </div>
     </li>
@@ -79,13 +81,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
                 <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
             </div>
         </div>
     </li>

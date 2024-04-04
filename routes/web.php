@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/college',[CollegeController::class,'createPage'])->name('college');
     Route::post('/college',[CollegeController::class,'store'])->name('college.store');
     Route::patch('/college',[CollegeController::class,'edit'])->name('college.update');
+    Route::patch('/updateColleges/{id}',[CollegeController::class,'update_popular']);
+    
     Route::get('/college/{id}',[CollegeController::class,'destroy'])->name('college.delete');
     Route::get('/exceldata',[CollegeController::class,'exceldata'])->name('export.excel');
    
@@ -42,6 +44,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/course',[CourseController::class,'store'])->name('course.store');
     Route::patch('/course',[CourseController::class,'edit'])->name('course.update');
     Route::get('/course/{id}',[CourseController::class,'destroy'])->name('course.destroy');
+    Route::get('/course-overview',[CourseController::class,'course_OverView']);
+    Route::post('/course-overview',[CourseController::class,'course_OverView_store'])->name('course_OverView.store');
+  
 
 
 });
@@ -59,6 +64,8 @@ Route::get('/colleges', function () {
 Route::get('/', function () {
     return view('pages.home');
 });
+//course Detail
+Route::get('/course_detail/{id}',[CourseController::class,'course_Detail']);
 
 
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\course;
+use App\Models\CourseOverView;
+use Illuminate\Http\RedirectResponse;
 
 class CourseController extends Controller
 {
@@ -28,7 +30,7 @@ return view('admin.pages.course',compact('data'));
             $course->Duration=$request->Duration;
             $course->Exam_Type=$request->Exam_Type;
             $course->Course_Fee=$request->Course_Fee;
-            $course->list_of_course=$request->list_of_course;
+            $course->list_of_course=implode(',',$request->list_of_course);
             $course->avg_salary=$request->avg_salary;
             $course->min_salary=$request->min_salary;
             $course->max_salary=$request->max_salary;
@@ -74,4 +76,36 @@ return view('admin.pages.course',compact('data'));
 
     }
     }
+
+// course OverView
+function course_Detail(Request $request, $id){
+$data=course::find($id);
+
+return view('pages.courseDetail',compact('data'));
+
+
+}
+
+function course_OverView(){
+$data=CourseOverView::paginate(4);
+return view('admin.pages.CourseOverView',compact('data') );
+}
+
+//store
+function course_OverView_store(Request $request): RedirectResponse
+{
+    $this->validate($request, [
+         'course_id' => 'required',
+         'body' => 'required'
+    ]);
+
+    $post = CourseOverView::create([
+        'course_id' => $request->course_id,
+        'body' => $request->body
+    ]);
+
+    return back()->with('success','Post created successfully.');
+}
+
+
 }

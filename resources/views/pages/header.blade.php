@@ -42,8 +42,8 @@
             <div class="col-lg-12">
                 <div class="header-one-wrapper">
                     <div class="left-side-header">
-                        <a href="./" class="logo-area">
-                            <img src="assets/images/logo2.png" alt="Sikshanation">
+                        <a href="/" class="logo-area">
+                            <img src="{{url('assets/images/logo2.png')}}" alt="Sikshanation">
                         </a>
 
                         <div class="main-nav-one">
@@ -69,48 +69,23 @@
                                             <li>
                                                 <ul class="">
                                                     <li class="parent"><a href="colleges.php">Colleges By Degrees </a>
-                                                    </li>
-                                                    <li><a class="mobile-menu-link" href="colleges.php"> B.Arch </a>
-                                                    </li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Tech in Mechanical
-                                                            Engineering </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Sc Radiotherapy </a>
-                                                    </li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Sc in Medical
-                                                            Laboratory Technology </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> MBA </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> Auto CAD </a></li>
+                                                       
+                                                        @foreach(App\Models\course::all() as $course)
+                                                        <li><a class="mobile-menu-link" href="{{url('colleges')}}/{{$course->id}}"> {{$course->course_name}} </a></li>
+                                                        @endforeach
                                                 </ul>
+                                            
                                                 <ul class="">
-                                                    <li class="parent"><a href="#">Popular Colleges</a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Des </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Ed </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Sc Agriculture </a>
-                                                    </li>
-                                                    <li><a class="mobile-menu-link" href="#"> MBA in Media
-                                                            Management </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> MBA in International
-                                                            Business </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> MBA in Operations
-                                                            Management </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Sc in Statistics
-                                                        </a></li>
-                                                </ul>
-                                                <ul class="">
-                                                    <li class="parent"><a href="#">Others</a></li>
-                                                    <li><a href="#"> B.Sc in Home Science </a></li>
-                                                    <li><a href="#"> Bachelor of Management Studies </a></li>
-                                                    <li><a href="#"> Bachelor of Mass Communication </a></li>
-                                                    <li><a href="#"> Bachelor of Computer Application </a></li>
-                                                    <li><a href="#"> B.Pharma </a></li>
-                                                    <li><a href="#"> Bachelor of Dental Surgery (BDS) </a></li>
-                                                    <li><a href="#">View All Courses</a></li>
+                                                    <li class="parent"><a href="#">Top Colleges</a></li>
+                                                    @foreach(App\Models\college::all() as $course)
+                                                    <li><a class="mobile-menu-link" href="{{url('college_detail')}}/{{$course->id}}"> {{$course->college_name}} </a></li>
+                                                    @endforeach
                                                 </ul>
                                                 <div class="thumbnav-area">
                                                     <!-- single thumbnav -->
                                                     <a href="create-course.html" class="single-thumbnav">
                                                         <div class="icon">
-                                                            <img src="assets/images/04.png" alt="nav">
+                                                            <img src="{{url('assets/images/04.png')}}" alt="nav">
                                                         </div>
                                                         <span>Exam</span>
                                                     </a>
@@ -118,7 +93,7 @@
                                                     <!-- single thumbnav -->
                                                     <a href="lesson-details.html" class="single-thumbnav mash">
                                                         <div class="icon">
-                                                            <img src="assets/images/05.png" alt="nav">
+                                                            <img src="{{url('assets/images/05.png')}}" alt="nav">
                                                         </div>
                                                         <span>Trending Courses</span>
                                                     </a>
@@ -126,7 +101,7 @@
                                                     <!-- single thumbnav -->
                                                     <a href="instructor.html" class="single-thumbnav">
                                                         <div class="icon">
-                                                            <img src="assets/images/06.png" alt="nav">
+                                                            <img src="{{url('assets/images/06.png')}}" alt="nav">
                                                         </div>
                                                         <span>Scholarships</span>
                                                     </a>
@@ -139,49 +114,21 @@
                                         <a class="nav-link" href="#">Courses</a>
                                         <ul class="megamenu-hub min-mega shape-move">
                                             <li>
-                                                <ul class="">
+                                                <ul class="" style="display: inline-block;
+                                                margin-right: 10px;">
+                                                    
                                                     <li class="parent"><a href="colleges.php">Popular Courses </a></li>
-                                                    <li><a class="mobile-menu-link" href="btech.php"> B.Tech </a></li>
-                                                    <li><a class="mobile-menu-link" href="btech.php"> B.Arch </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Tech in Mechanical
-                                                            Engineering </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Sc Radiotherapy </a>
-                                                    </li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Sc in Medical
-                                                            Laboratory Technology </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> MBA </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> Auto CAD </a></li>
+                                                    @foreach(App\Models\course::all() as $course)
+                                                    <li><a class="mobile-menu-link" href="{{url('course_detail')}}/{{$course->id}}"> {{$course->course_name}} </a></li>
+                                                    @endforeach
                                                 </ul>
-                                                <ul class="">
-                                                    <li class="parent"><a href="#">Courses Details</a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Des </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Ed </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Sc Agriculture </a>
-                                                    </li>
-                                                    <li><a class="mobile-menu-link" href="#"> MBA in Media
-                                                            Management </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> MBA in International
-                                                            Business </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> MBA in Operations
-                                                            Management </a></li>
-                                                    <li><a class="mobile-menu-link" href="#"> B.Sc in Statistics
-                                                        </a></li>
-                                                </ul>
-                                                <ul class="">
-                                                    <li class="parent"><a href="#">Others</a></li>
-                                                    <li><a href="#"> B.Sc in Home Science </a></li>
-                                                    <li><a href="#"> Bachelor of Management Studies </a></li>
-                                                    <li><a href="#"> Bachelor of Mass Communication </a></li>
-                                                    <li><a href="#"> Bachelor of Computer Application </a></li>
-                                                    <li><a href="#"> B.Pharma </a></li>
-                                                    <li><a href="#"> Bachelor of Dental Surgery (BDS) </a></li>
-                                                    <li><a href="#">View All Courses</a></li>
-                                                </ul>
+                                                 
+                                               
                                                 <div class="thumbnav-area">
                                                     <!-- single thumbnav -->
                                                     <a href="#" class="single-thumbnav">
                                                         <div class="icon">
-                                                            <img src="assets/images/04.png" alt="nav">
+                                                            <img src="{{url('assets/images/04.png')}}" alt="nav">
                                                         </div>
                                                         <span>Exam</span>
                                                     </a>
@@ -189,7 +136,7 @@
                                                     <!-- single thumbnav -->
                                                     <a href="#" class="single-thumbnav mash">
                                                         <div class="icon">
-                                                            <img src="assets/images/05.png" alt="nav">
+                                                            <img src="{{url('assets/images/05.png')}}" alt="nav">
                                                         </div>
                                                         <span>Trending Courses</span>
                                                     </a>
@@ -197,7 +144,7 @@
                                                     <!-- single thumbnav -->
                                                     <a href="#" class="single-thumbnav">
                                                         <div class="icon">
-                                                            <img src="assets/images/06.png" alt="nav">
+                                                            <img src="{{url('assets/images/06.png')}}" alt="nav">
                                                         </div>
                                                         <span>Scholarships</span>
                                                     </a>

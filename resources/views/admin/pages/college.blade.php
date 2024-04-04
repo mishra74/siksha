@@ -91,13 +91,19 @@
                             <th scope="col" width="20%">Institute Type</th>
                             <th scope="col" width="20%">Courses ID</th>
                             <th scope="col" width="20%">Date/Time</th>
+                            <th scope="col" width="20%" >Populer</th>
                             <th scope="col" width="20%">Action</th>
                           </tr>
                         </thead>
                         <tbody>
+                          @php
+$i=1;
+                          @endphp
+              
+                        
                             @foreach ($data as $item)
                             <tr>
-                                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                                <th scope="row">{{$i++}}</th>
                                 <td>{{$item->college_name}}</td>
                                 <td>{{$item->place}}</td>
                                 <td>{{$item->state}}</td>
@@ -107,6 +113,10 @@
                                 <td>{{$item->institute_type}}</td>
                                 <td>{{$item->courses_id}}</td>
                                 <td>{{$item->created_at}}</td>
+                                <td><label class="switch">
+                                  <input type="checkbox"  id="mySwitch">
+                                  <span class="slider round"></span>
+                                </label></td>
                                 <td><a href="{{route('college.delete',$item->id)}}"><button>Delete</button></a>
                                   
                                 </td>
@@ -269,7 +279,7 @@
               @foreach(App\Models\course::all() as $course)
               <option  value="{{$course->id}}"  >{{$course->course_name}}</option>
               @endforeach
-              </select>
+              </select> 
             </div>
             <button class="btn btn-md btn-primary" id="addCourseBtn" type="button">Add New Course</button>
         
@@ -379,8 +389,9 @@
         }
     });
 });
+//set popular true or false
 
-    });
+  });
     
 </script>
 

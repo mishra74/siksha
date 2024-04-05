@@ -1,47 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.user')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sikshanation - Find Top Colleges, Universities in India | Explore Courses, Exams, Admissions, Latest News
-    </title>
-    <meta name="description"
-        content="Sikshanation - Find Top Colleges, Universities in India, Explore Courses, Exams, Admissions, Latest News">
-    <meta name="keywords"
-        content="Sikshanation - Find Top Colleges, Universities in India, Explore Courses, Exams, Admissions, Latest News">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
-    <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="assets/css/fontawesome-6.css">
-    <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <!-- magnific popup css -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- jquery ui css -->
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <!-- metismenu scss -->
-    <link rel="stylesheet" href="assets/css/metismenu.css">
-    <!-- custom style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+@section('title', 'Home')
 
-</head>
-
-<body>
-
-    <!-- header style one -->
-    <?php include('header.php') ?>
-    <!-- header style end -->
-    <!-- bread crumb area -->
-    <!-- bread crumb area end -->
-
+@section('content')
     <div class="login-registration-wrapper">
         <div class="container">
             <div class="row g-0">
             <div class="col-lg-6">
                     <div class="login-page-form-area">
-                        <h4 class="title">Sign Up to Your Account👋</h4>
+                        <h4 class="title">Apply For Frenchaichies 👋</h4>
                         <form action="#">
                             <div class="single-input-wrapper">
                                 <label for="name">Your Name*</label>
@@ -49,32 +16,27 @@
                             </div>
                             <div class="half-input-wrapper">
                                 <div class="single-input-wrapper">
-                                    <label for="username">User Name</label>
-                                    <input id="username" type="text" placeholder="Enter User Name" required>
+                                    <label for="username">Number</label>
+                                    <input id="number" type="text" placeholder="Enter User Name" name="number" required>
                                 </div>
                                 <div class="single-input-wrapper">
                                     <label for="email">Email*</label>
-                                    <input id="email" type="email" placeholder="Enter Your Email" required>
+                                    <input id="email" type="email" placeholder="Enter Your Email" name="email" required>
                                 </div>
                             </div>
                             <div class="half-input-wrapper">
                                 <div class="single-input-wrapper">
-                                    <label for="password">Your Password</label>
-                                    <input id="password" type="password" placeholder="Password" required>
+                                    <label for="password">State</label>
+                                    <input id="password" type="text" placeholder="state" name="state" required>
                                 </div>
                                 <div class="single-input-wrapper">
-                                    <label for="passwords">Re Password</label>
-                                    <input id="passwords" type="password" placeholder="Re Password" required>
+                                    <label for="area">Area</label>
+                                    <input id="area" type="text" placeholder="Area" name="area" required>
                                 </div>
                             </div>
-                            <div class="single-checkbox-filter">
-                                <div class="check-box">
-                                    <input type="checkbox" id="type-1">
-                                    <label for="type-1">Accept the Terms and Privacy Policy</label><br>
-                                </div>
-                            </div>
-                            <button class="rts-btn btn-primary">Login</button>
-                            <p>Don't Have an account? <a href="#">Registration</a></p>
+                           
+                            <button class="rts-btn btn-primary" type="submit">Apply</button>
+                           
                         </form>
                     </div>
                 </div>
@@ -148,8 +110,7 @@
     <!-- about area end -->
 
     <!-- footer call to action area start -->
-    <?php include('footer.php') ?>
-
+    
     <!-- all scripts -->
     <!-- jquery min js -->
     <script src="assets/js/jquery.min.js"></script>
@@ -196,6 +157,3 @@
             });
         });
     </script>
-</body>
-
-</html>

@@ -14,7 +14,20 @@
             class="fas fa-download fa-sm text-white-50" ></i> Generate Report</a>
 </div>
 
+<!-- Content Row -->
+<div class="row">
 
+    <!-- Earnings (Monthly) Card Example -->
+
+    <!-- Earnings (Monthly) Card Example -->
+
+
+    <!-- Earnings (Monthly) Card Example -->
+   
+
+    <!-- Pending Requests Card Example -->
+   
+</div>
 
 <!-- Content Row -->
 
@@ -26,7 +39,7 @@
             <!-- Card Header - Dropdown -->
             <div
                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">  <button onclick="openForm()" class="addform">+ Add Course OverView</button></h6>
+                <h6 class="m-0 font-weight-bold text-primary">  <button onclick="openForm()" class="addform">+ Add College</button></h6>
                 <div class="dropdown no-arrow">
                     <div class="px-2">
                         <div class="mb-2 d-flex justify-content-between align-items-center">
@@ -69,8 +82,14 @@
                         <thead>
                           <tr class="bg-light">
                             <th scope="col" width="5%">#</th>
-                            <th scope="col" width="20%">College Name</th>
-                            <th scope="col" width="10%" colspan="4">Over View</th>
+                            <th scope="col" width="20%">Name</th>
+                            <th scope="col" width="10%">Number</th>
+                            <th scope="col" width="20%">Email</th>
+                            <th scope="col" width="20%">City</th>
+                            <th scope="col" width="20%">Which Course</th>
+                            <th scope="col" width="20%">Exam</th>
+                            <th scope="col" width="20%">Last Qualification</th>
+                       
                             <th scope="col" width="20%">Action</th>
                           </tr>
                         </thead>
@@ -79,13 +98,23 @@
 $i=1;
                           @endphp
               
+                        
                             @foreach ($data as $item)
                             <tr>
                                 <th scope="row">{{$i++}}</th>
                                 <td>{{$item->college_name}}</td>
                                 <td>{{$item->place}}</td>
-                               
-                               
+                                <td>{{$item->state}}</td>
+                                <td>{{$item->city}}</td>
+                                <td>{{$item->study_mode}}</td>
+                                <td>{{$item->exam}}</td>
+                                <td>{{$item->institute_type}}</td>
+                                <td>{{$item->courses_id}}</td>
+                                <td>{{$item->created_at}}</td>
+                                <td><label class="switch">
+                                  <input type="checkbox"  id="mySwitch">
+                                  <span class="slider round"></span>
+                                </label></td>
                                 <td><a href="{{route('college.delete',$item->id)}}"><button>Delete</button></a>
                                   
                                 </td>
@@ -181,39 +210,23 @@ $i=1;
 
 
 <!-- Add college form Models -->
-<div class="popup-form-container" id="popupForm">
-    <div class="popup-form">
-      <span class="close-btn" onclick="closeForm()">&times;</span>
-      
-      <h1>Course Overview</h1>
-      <form>
-        <div id="editor">
-            <p>This is some sample content.</p>
-        </div>
-       
-        <script>
-            ClassicEditor
-                .create(document.querySelector('#editor'))
-                .then(editor => {
-                    // Get the editor's data
-                    const editorData = editor.getData();
-                    console.log(editorData); // You can use editorData as per your requirement
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        </script>
-      </form>
-    </div>
-  </div>
- 
- 
+
 
 
 @endsection
-
+<script src=
+"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity=
+"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">
+    </script>
 <!-- jQuery CDN -->
-   
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity=
+"sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+      </script>
 <script>
     function openForm() {
         document.getElementById("popupForm").style.display = "block";
@@ -227,31 +240,13 @@ $i=1;
 {{-- for excel data export --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script>
 
-<script type="text/javascript">
+<script>
     $(document).ready(() => {
-        let count = 1;
-
-        // Adding course input field on click to Add New Course button
-       
-
-        // Removing course input field on click to Remove button
-        $('#coursesContainer').on('click', '.remove-course', function () {
-            $(this).closest('.course-group').remove();
-        });
-
-   
-       
-            $('#summernote').summernote({
-                height: 300,
-            });
-       
-  var content=$("#editor").text();
-  console.log(content);
+        
 
   });
     
 </script>
+
+

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\HomeController;
 
 
 
@@ -51,7 +52,7 @@ Route::middleware('auth')->group(function () {
 
 });
 //user area
-Route::get('/colleges',[CollegeController::class,'colleges'])->name('colleges');
+Route::get('/college_detail/{id}',[CollegeController::class,'colleges'])->name('colleges');
 Route::get('/', function () {
     return view('pages.home');
 });
@@ -64,6 +65,7 @@ Route::get('/colleges', function () {
 Route::get('/', function () {
     return view('pages.home');
 });
+Route::get('/apply-frenchaichies',[HomeController::class,'frenchaichies_index']);
 //course Detail
 Route::get('/course_detail/{id}',[CourseController::class,'course_Detail']);
 

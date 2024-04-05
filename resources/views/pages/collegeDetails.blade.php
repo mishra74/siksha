@@ -1,39 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.user')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sikshanation - Find Top Colleges, Universities in India | Explore Courses, Exams, Admissions, Latest News
-    </title>
-    <meta name="description"
-        content="Sikshanation - Find Top Colleges, Universities in India, Explore Courses, Exams, Admissions, Latest News">
-    <meta name="keywords"
-        content="Sikshanation - Find Top Colleges, Universities in India, Explore Courses, Exams, Admissions, Latest News">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
-    <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="assets/css/fontawesome-6.css">
-    <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <!-- magnific popup css -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- jquery ui css -->
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <!-- metismenu scss -->
-    <link rel="stylesheet" href="assets/css/metismenu.css">
-    <!-- custom style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+@section('title', 'Home')
 
-</head>
+@section('content')
 
-<body>
 
-    <!-- header style one -->
-    <?php include('header.php') ?>
-    <!-- header style end -->
-    <!-- course details breadcrumb -->
+ 
     <div class="course-details-breadcrumb-1 bg_image">
         <div class="container">
             <div class="row">
@@ -1624,8 +1596,7 @@
     </div>
     <!-- course area end -->
 
-    <!-- footer call to action area start -->
-    <?php include('footer.php') ?>
+   
 
     <!-- all scripts -->
     <!-- jquery min js -->
@@ -1824,6 +1795,4 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 </div>
-</body>
-
-</html>
+@endsection

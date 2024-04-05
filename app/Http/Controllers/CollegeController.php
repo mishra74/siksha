@@ -41,7 +41,7 @@ return view('admin.pages.college',compact('data'));
         $college->study_mode=$request->study_mode;
         $college->exam=$request->exam;
         $college->institute_type=$request->institute_type;
-        $college->courses_id=implode(',', $request->courses_id);
+        $college->courses_id= is_array($request->courses_id) ? implode(',', $request->courses_id) : $request->courses_id;
         $college->collegeImage=$imagePath;
         $college->CollegeDetail=$request->CollegeDetail;
         $college->save();
@@ -102,9 +102,18 @@ return view('admin.pages.college',compact('data'));
 
 }
 
-function colleges(){
+function colleges(Request $request, $id){
 
-    $data=college::all();
-    return $data;
+    $idArray = explode(',', $id);
+$data = college::where(function ($query) use ($idArray) {
+    foreach ($idArray as $value) {
+        $query->orWhere('courses_id', 'like', '%' . $value . '%');
+    }
+})->get();
+$count = $data->count();
+return view('pages.collegeDetails',compact('data'));
+
+    
+    
 }
 }

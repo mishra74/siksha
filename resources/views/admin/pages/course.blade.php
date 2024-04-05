@@ -229,6 +229,13 @@
                         </div>
                     </div>
                
+                    <div class="form-group">
+                        <label for="courses_id">Full Name of Course:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control course-input" name="fullNameCourse" required>
+                         
+                        </div>
+                    </div>
             
             <div class="row">
                 <div class="col-md-6">

@@ -362,50 +362,23 @@
                             <div class="row g-5 mt--0">
                                 <div class="col-lg-12">
                                     <!-- rts single course -->
-                                    <div class="rts-single-course course-list">
-                                        <a href="iit-madras.php" class="thumbnail">
-                                            <img src="assets/images/col1.jpg" alt="course">
-                                        </a>
-                                        <div class="information-inner">
-                                            <a href="iit-madras.php">
-                                                <h5 class="title">LBS Pune</h5>
-                                            </a>
-                                            <p class="disc">Lotus Business School or LBS Pune is one of the top business schools in Pune. Affiliated with Savitribai Phule Pune University, the business school is recognised for imparting quality management education. </p>
-                                            <div class="tags-area-wrapper">
-                                                <a class="btn btn-primary" href="#">Download Brochure</a>
-                                                <a class="btn btn-primary" href="#">Fee Structure </a>
-                                            </div>
-                                            <div class="rating-and-price">
-                                                <div class="rating-area">
-                                                    <span>4.5</span>
-                                                    <div class="stars">
-                                                        <ul>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="price-area">
-                                                <a class="rts-btn btn-primary" href="signup.php">Apply Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    
+                                        
 
                                     </div>
                                     <!-- rts single course end -->
                                     <!-- rts single course -->
+                                    @if($data!=="")
+                                    @foreach($data as $college)
                                     <div class="rts-single-course course-list">
                                         <a href="#" class="thumbnail">
-                                            <img src="assets/images/col2.jpg" alt="course">
+                                            <img src="{{url($college->collegeImage)}}" alt="course">
                                         </a>
                                         <div class="information-inner">
                                             <a href="#">
-                                                <h5 class="title">NIPER Mohali</h5>
+                                                <h5 class="title">{{$college->college_name}}</h5>
                                             </a>
-                                            <p class="disc">National Institute of Pharmaceutical Education and Research or NIPER Mohali was established in 1998. NIPER Mohali offers full-time 2-years MBA (Pharm.) programme.</p>
+                                            <p class="disc">{{$college->CollegeDetail}}</p>
                                             <div class="tags-area-wrapper">
                                                 <a class="btn btn-primary" href="#">Download Brochure</a>
                                                 <a class="btn btn-danger" href="#">Fee Structure </a>
@@ -430,216 +403,18 @@
                                         </div>
 
                                     </div>
-                                    <!-- rts single course end -->
+                                    @endforeach
+
+                                    @else
+                                    <div class="rts-single-course course-list">
+                                     <h1>Record Not Found</h1>
+
+                                    </div>
+                                    @endif
+                                  
+                                    
                                     <!-- rts single course -->
-                                    <div class="rts-single-course course-list">
-                                        <a href="#" class="thumbnail">
-                                            <img src="assets/images/col3.jpg" alt="course">
-                                        </a>
-                                        <div class="information-inner">
-                                            <a href="#">
-                                                <h5 class="title"> IIT Bombay</h5>
-                                            </a>
-                                            <p class="disc">Lotus Business School or LBS Pune is one of the top business schools in Pune. Affiliated with Savitribai Phule Pune University, the business school is recognised for imparting quality management education. </p>
-                                            <p class="teacher">Dr. Angela Yu</p>
-                                            <div class="tags-area-wrapper">
-                                                <a class="btn btn-primary" href="#">Download Brochure</a>
-                                                <a class="btn btn-danger" href="#">Fee Structure </a>
-                                            </div>
-                                            <div class="rating-and-price">
-                                                <div class="rating-area">
-                                                    <span>4.5</span>
-                                                    <div class="stars">
-                                                        <ul>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="price-area">
-                                                <a class="rts-btn btn-primary" href="signup.php">Apply Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- rts single course end -->
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course course-list">
-                                        <a href="#" class="thumbnail">
-                                            <img src="assets/images/col4.jpg" alt="course">
-                                        </a>
-                                        <div class="information-inner">
-                                            <a href="#">
-                                                <h5 class="title"> JD Institute of Fashion Technology (JDIFT), Delhi</h5>
-                                            </a>
-                                            <p class="disc">Lotus Business School or LBS Pune is one of the top business schools in Pune. Affiliated with Savitribai Phule Pune University, the business school is recognised for imparting quality management education. </p>
-                                            <div class="tags-area-wrapper">
-                                                <a class="btn btn-primary" href="#">Download Brochure</a>
-                                                <a class="btn btn-danger" href="#">Fee Structure </a>
-                                            </div>
-                                            <div class="rating-and-price">
-                                                <div class="rating-area">
-                                                    <span>4.5</span>
-                                                    <div class="stars">
-                                                        <ul>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="price-area">
-                                                <a class="rts-btn btn-primary" href="#">Apply Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- rts single course end -->
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course course-list">
-                                        <a href="#" class="thumbnail">
-                                            <img src="assets/images/col5.jpg" alt="course">
-                                        </a>
-                                        <div class="information-inner">
-                                            <a href="#">
-                                                <h5 class="title"> Vogue Institute of Art and Design</h5>
-                                            </a>
-                                            <p class="disc">Lotus Business School or LBS Pune is one of the top business schools in Pune. Affiliated with Savitribai Phule Pune University, the business school is recognised for imparting quality management education. </p>
-                                            <div class="tags-area-wrapper">
-                                                <a class="btn btn-primary" href="#">Download Brochure</a>
-                                                <a class="btn btn-danger" href="#">Fee Structure </a>
-                                            </div>
-                                            <div class="rating-and-price">
-                                                <div class="rating-area">
-                                                    <span>4.5</span>
-                                                    <div class="stars">
-                                                        <ul>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="price-area">
-                                                <a class="rts-btn btn-primary" href="#">Apply Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- rts single course end -->
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course course-list">
-                                        <a href="#" class="thumbnail">
-                                            <img src="assets/images/col6.jpg" alt="course">
-                                        </a>
-                                        <div class="information-inner">
-                                            <a href="#">
-                                                <h5 class="title">IIT Kharagpur</h5>
-                                            </a>
-                                            <p class="disc">Lotus Business School or LBS Pune is one of the top business schools in Pune. Affiliated with Savitribai Phule Pune University, the business school is recognised for imparting quality management education. </p>
-                                            <div class="tags-area-wrapper">
-                                                <a class="btn btn-primary" href="#">Download Brochure</a>
-                                                <a class="btn btn-danger" href="#">Fee Structure </a>
-                                            </div>
-                                            <div class="rating-and-price">
-                                                <div class="rating-area">
-                                                    <span>4.5</span>
-                                                    <div class="stars">
-                                                        <ul>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="price-area">
-                                                <a class="rts-btn btn-primary" href="#">Apply Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- rts single course end -->
-                                    <div class="rts-single-course course-list">
-                                        <a href="#" class="thumbnail">
-                                            <img src="assets/images/col7.jpg" alt="course">
-                                        </a>
-                                        <div class="information-inner">
-                                            <a href="#">
-                                                <h5 class="title">IIT Madras</h5>
-                                            </a>
-                                            <p class="disc">Lotus Business School or LBS Pune is one of the top business schools in Pune. Affiliated with Savitribai Phule Pune University, the business school is recognised for imparting quality management education. </p>
-                                            <div class="tags-area-wrapper">
-                                                <a class="btn btn-primary" href="#">Download Brochure</a>
-                                                <a class="btn btn-danger" href="#">Fee Structure </a>
-                                            </div>
-                                            <div class="rating-and-price">
-                                                <div class="rating-area">
-                                                    <span>4.5</span>
-                                                    <div class="stars">
-                                                        <ul>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="price-area">
-                                                <a class="rts-btn btn-primary" href="#">Apply Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- rts single course end -->
-                                    <!-- rts single course -->
-                                    <div class="rts-single-course course-list">
-                                        <a href="#" class="thumbnail">
-                                            <img src="assets/images/col8.jpg" alt="course">
-                                        </a>
-                                        <div class="information-inner">
-                                            <a href="#">
-                                                <h5 class="title">Symbiosis Group Of Institutes</h5>
-                                            </a>
-                                            <p class="disc">Lotus Business School or LBS Pune is one of the top business schools in Pune. Affiliated with Savitribai Phule Pune University, the business school is recognised for imparting quality management education. </p>
-                                            <div class="tags-area-wrapper">
-                                                <a class="btn btn-primary" href="#">Download Brochure</a>
-                                                <a class="btn btn-danger" href="#">Fee Structure </a>
-                                            </div>
-                                            <div class="rating-and-price">
-                                                <div class="rating-area">
-                                                    <span>4.5</span>
-                                                    <div class="stars">
-                                                        <ul>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                                            <li><i class="fa-sharp fa-regular fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="price-area">
-                                                <a class="rts-btn btn-primary" href="#">Apply Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                  
                                     <!-- rts single course end -->
                                 </div>
                             </div>

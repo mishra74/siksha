@@ -249,7 +249,7 @@
                         </div>
                         <div class="buttons-area">
                             <a href="login.php" class="rts-btn btn-border">Log In</a>
-                            <a href="signup.php" class="rts-btn btn-primary">Sign Up</a>
+                            <a href="{{url('apply-frenchaichies')}}" class="rts-btn btn-primary" >Apply Frenchaichi</a>
                         </div>
                         <div class="menu-btn" id="menu-btn">
                             <svg width="20" height="16" viewBox="0 0 20 16" fill="none"

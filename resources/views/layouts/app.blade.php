@@ -45,6 +45,7 @@
 <!-- Page level custom scripts -->
 <script src="admin_css/js/demo/chart-area-demo.js"></script>
 <script src="admin_css/js/demo/chart-pie-demo.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
 <style>
     .search{
   top:6px;
